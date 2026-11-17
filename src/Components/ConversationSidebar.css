@@ -1,0 +1,222 @@
+.conversation-sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 260px;
+  flex-shrink: 0;
+  min-height: 0;
+  padding: var(--space-5) var(--space-4);
+  background-color: var(--color-sidebar);
+  border-right: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.conversation-sidebar h2 {
+  margin: 0 0 var(--space-4);
+  font-size: 16px;
+  font-weight: 650;
+  letter-spacing: -0.2px;
+}
+
+.sidebar-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.sidebar-heading h2 {
+  margin: 0;
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+.sidebar-content > .chat-button {
+  flex-shrink: 0;
+}
+
+.sidebar-toggle {
+  display: none;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-small);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.conversation-sidebar nav {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  margin-top: var(--space-5);
+}
+
+.conversation-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.conversation-button {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  padding: var(--space-3);
+  border: 1px solid transparent;
+  border-radius: var(--radius-medium);
+  background-color: transparent;
+  color: var(--color-muted);
+  font: inherit;
+  font-size: 14px;
+  text-align: left;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+
+.conversation-button:hover:not(:disabled) {
+  background-color: var(--color-hover);
+  color: var(--color-text);
+}
+
+.conversation-button.active {
+  background-color: var(--color-primary-soft);
+  color: var(--color-accent-text);
+  border-color: var(--color-accent-border);
+  font-weight: 600;
+}
+
+.conversation-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.sidebar-account {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+.sidebar-account-label {
+  margin: 0 0 var(--space-1);
+  color: var(--color-muted);
+  font-size: 12px;
+}
+
+.sidebar-account-email {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 13px;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+.sidebar-signout {
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.sidebar-signout:hover:not(:disabled) {
+  background-color: var(--color-hover);
+}
+
+.sidebar-signout:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+  .conversation-sidebar {
+    width: 100%;
+    max-height: none;
+    padding: var(--space-3) var(--space-4);
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .sidebar-heading {
+    margin-bottom: 0;
+  }
+
+  .sidebar-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sidebar-content {
+    display: none;
+  }
+
+  .conversation-sidebar.is-open .sidebar-content {
+    display: flex;
+    flex: none;
+    max-height: 45dvh;
+    margin-top: var(--space-3);
+    overflow-y: auto;
+  }
+
+  .conversation-sidebar nav {
+    flex: none;
+    overflow: visible;
+    margin-top: var(--space-3);
+  }
+}
+
+.conversation-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.conversation-row .conversation-button {
+  flex: 1;
+  min-width: 0;
+  width: auto;
+}
+
+.conversation-delete {
+  flex-shrink: 0;
+  min-height: 44px;
+  padding: 8px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-small);
+  background-color: transparent;
+  color: var(--color-error-text);
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.conversation-delete:hover:not(:disabled) {
+  border-color: var(--color-error-border);
+  background-color: var(--color-error-bg);
+}
+
+.conversation-delete:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

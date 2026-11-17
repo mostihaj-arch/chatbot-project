@@ -1,0 +1,220 @@
+.chat-message-user,
+.chat-message-robot {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.chat-message-user {
+  justify-content: flex-end;
+}
+
+.chat-message-text {
+  min-width: 0;
+  max-width: min(78%, 680px);
+  padding: 14px 18px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-large);
+  color: var(--color-text);
+  font-size: 15px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.chat-message-user .chat-message-text {
+  background-color: var(--color-primary-soft);
+  border-color: var(--color-accent-border);
+  border-top-right-radius: var(--radius-small);
+}
+
+.chat-message-robot .chat-message-text {
+  background-color: var(--color-surface);
+  border-top-left-radius: var(--radius-small);
+}
+
+.chat-message-profile {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.message-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+  white-space: normal;
+}
+
+.copy-button {
+  min-height: 36px;
+  padding: 6px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-small);
+  background-color: var(--color-sidebar);
+  color: var(--color-muted);
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.copy-button:hover {
+  background-color: var(--color-primary-soft);
+  color: var(--color-text);
+}
+
+.copy-status {
+  color: var(--color-muted);
+  font-size: 12px;
+}
+
+@media (max-width: 640px) {
+  .chat-message-user,
+  .chat-message-robot {
+    gap: var(--space-2);
+  }
+
+  .chat-message-text {
+    max-width: calc(100% - 40px);
+    padding: 12px 14px;
+  }
+
+  .chat-message-profile {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.message-markdown {
+  min-width: 0;
+  white-space: normal;
+}
+
+.message-plain {
+  white-space: pre-wrap;
+}
+
+.message-markdown > :first-child {
+  margin-top: 0;
+}
+
+.message-markdown > :last-child {
+  margin-bottom: 0;
+}
+
+.message-markdown p {
+  margin: 0 0 var(--space-3);
+}
+
+.message-markdown h1,
+.message-markdown h2,
+.message-markdown h3,
+.message-markdown h4,
+.message-markdown h5,
+.message-markdown h6 {
+  margin: var(--space-5) 0 var(--space-3);
+  line-height: 1.35;
+  font-weight: 650;
+}
+
+.message-markdown h1 {
+  font-size: 24px;
+}
+
+.message-markdown h2 {
+  font-size: 21px;
+}
+
+.message-markdown h3 {
+  font-size: 18px;
+}
+
+.message-markdown ul,
+.message-markdown ol {
+  margin: 0 0 var(--space-3);
+  padding-left: var(--space-5);
+}
+
+.message-markdown li + li {
+  margin-top: var(--space-1);
+}
+
+.message-markdown li > ul,
+.message-markdown li > ol {
+  margin-top: var(--space-1);
+  margin-bottom: 0;
+}
+
+.message-markdown a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.message-markdown code {
+  padding: 2px 5px;
+  border-radius: 4px;
+  background-color: var(--color-primary-soft);
+  color: var(--color-accent-text);
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.9em;
+}
+
+.message-markdown pre {
+  max-width: 100%;
+  margin: var(--space-4) 0;
+  padding: var(--space-4);
+  border-radius: var(--radius-medium);
+  background-color: #18231d;
+  color: #edf5ef;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+.message-markdown pre code {
+  padding: 0;
+  background-color: transparent;
+  color: inherit;
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-wrap: normal;
+  white-space: pre;
+}
+
+.message-markdown blockquote {
+  margin: var(--space-4) 0;
+  padding-left: var(--space-4);
+  border-left: 3px solid var(--color-primary);
+  color: var(--color-muted);
+}
+
+.message-markdown table {
+  display: block;
+  max-width: 100%;
+  margin: var(--space-4) 0;
+  border-collapse: collapse;
+  overflow-x: auto;
+}
+
+.message-markdown th,
+.message-markdown td {
+  padding: 8px 12px;
+  border: 1px solid var(--color-border);
+  text-align: left;
+}
+
+.message-markdown th {
+  background-color: var(--color-sidebar);
+  font-weight: 600;
+}
+
+.message-markdown hr {
+  margin: var(--space-5) 0;
+  border: 0;
+  border-top: 1px solid var(--color-border);
+}

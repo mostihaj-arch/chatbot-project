@@ -1,0 +1,162 @@
+:root {
+  --color-page: #f3f5f4;
+  --color-surface: #ffffff;
+  --color-sidebar: #f7f9f8;
+  --color-text: #1c2923;
+  --color-muted: #59675f;
+  --color-border: #d9e2dc;
+
+  --color-primary: #18794e;
+  --color-primary-hover: #12633f;
+  --color-primary-soft: #e7f3ec;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+
+  --radius-small: 8px;
+  --radius-medium: 12px;
+  --radius-large: 20px;
+
+  color-scheme: light;
+
+  --color-on-primary: #ffffff;
+  --color-hover: #edf1ee;
+  --color-accent-text: #125c3b;
+  --color-accent-border: #b8d8c5;
+  --color-disabled-bg: #dce3de;
+  --color-disabled-text: #5a675e;
+  --color-error-bg: #fff4f4;
+  --color-error-text: #8a2424;
+  --color-error-border: #efc3c3;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-page: #101713;
+  --color-surface: #17211b;
+  --color-sidebar: #121c16;
+  --color-text: #edf4ef;
+  --color-muted: #b0bfb5;
+  --color-border: #3b4d41;
+
+  --color-primary: #70dca2;
+  --color-primary-hover: #91e7b7;
+  --color-primary-soft: #233e2e;
+  --color-on-primary: #10251a;
+
+  --color-hover: #223328;
+  --color-accent-text: #a2eac0;
+  --color-accent-border: #436e53;
+  --color-disabled-bg: #303d34;
+  --color-disabled-text: #a4b1a8;
+  --color-error-bg: #382020;
+  --color-error-text: #ffb7b7;
+  --color-error-border: #865050;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-text);
+  background-color: var(--color-page);
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+::selection {
+  background-color: var(--color-primary-soft);
+  color: var(--color-text);
+}
+
+.chat-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 18px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-medium);
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.4;
+  cursor: pointer;
+  transition: background-color 150ms ease;
+}
+
+.chat-button:hover:not(:disabled) {
+  background-color: var(--color-primary-hover);
+}
+
+.chat-button:disabled {
+  background-color: var(--color-disabled-bg);
+  color: var(--color-disabled-text);
+  cursor: not-allowed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chat-button {
+    transition: none;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.theme-toggle {
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  background-color: var(--color-hover);
+}
+
+.theme-toggle[aria-pressed="true"] {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-soft);
+  color: var(--color-accent-text);
+}

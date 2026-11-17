@@ -1,0 +1,125 @@
+.chat-input-section {
+  flex-shrink: 0;
+  padding-top: var(--space-4);
+  padding-bottom: var(--space-5);
+  background-color: var(--color-surface);
+}
+
+.text-box-container {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-large);
+  background-color: var(--color-surface);
+  box-shadow: 0 4px 20px rgb(28 41 35 / 5%);
+}
+
+.text-box-container:focus-within {
+  border-color: var(--color-primary);
+}
+
+.text-box {
+  display: block;
+  flex: 1;
+  min-width: 0;
+  min-height: 72px;
+  max-height: 200px;
+  padding: var(--space-2);
+  border: none;
+  border-radius: var(--radius-small);
+  background-color: transparent;
+  color: var(--color-text);
+  font: inherit;
+  font-size: 16px;
+  line-height: 1.6;
+  resize: vertical;
+  overflow-y: auto;
+}
+
+.text-box::placeholder {
+  color: var(--color-muted);
+}
+
+.text-box:focus-visible {
+  outline-offset: 0;
+}
+
+.send-button {
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.input-hint {
+  margin: var(--space-2) 0 0;
+  color: var(--color-muted);
+  font-size: 12px;
+  text-align: center;
+}
+
+.suggested-prompts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.suggested-prompt {
+  min-height: 40px;
+  padding: 8px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background-color: var(--color-sidebar);
+  color: var(--color-text);
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.suggested-prompt:hover:not(:disabled) {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-soft);
+}
+
+.suggested-prompt:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.chat-input-error {
+  margin-bottom: var(--space-3);
+  padding: var(--space-3);
+  border: 1px solid var(--color-error-border);
+  border-radius: var(--radius-medium);
+  background-color: var(--color-error-bg);
+  color: var(--color-error-text);
+}
+
+.chat-input-error p {
+  margin: 0;
+}
+
+.chat-input-error button {
+  margin-top: var(--space-2);
+}
+
+@media (max-width: 640px) {
+  .chat-input-section {
+    padding-bottom: var(--space-4);
+  }
+
+  .text-box-container {
+    gap: var(--space-2);
+    padding: var(--space-2);
+  }
+
+  .text-box {
+    min-height: 64px;
+    max-height: 140px;
+  }
+
+  .send-button {
+    padding-inline: 14px;
+  }
+}
